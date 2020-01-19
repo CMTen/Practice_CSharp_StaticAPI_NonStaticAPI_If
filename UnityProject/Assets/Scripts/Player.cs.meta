@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f2c112fee4999048916adaa0f2e3f0c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - aud: {instanceID: 0}
+  - SoundAtk: {fileID: 8300000, guid: e5596bb1fd662e5418d0d33c355a4478, type: 3}
+  - zombie: {instanceID: 0}
+  - tra: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u6BAD\u5C4D"
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f88c8301226fd194cbbc64e25b20d567, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f88c8301226fd194cbbc64e25b20d567, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -279,6 +283,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &90077759 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400166, guid: f88c8301226fd194cbbc64e25b20d567,
+    type: 3}
+  m_PrefabInstance: {fileID: 90077755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &90077760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90077756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb734698fe53ddc49a3b691fce5b41a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 50
+  atk: 0
+  aud: {fileID: 90077758}
+  SoundAtk: {fileID: 8300000, guid: b2814898b8005b04dbb2fadf2cf26112, type: 3}
+  player: {fileID: 1284488709}
+  traZombie: {fileID: 90077759}
 --- !u!1 &696332135
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +408,14 @@ PrefabInstance:
     - target: {fileID: 100166, guid: 8ed86b8ef3190a9429964c02eaa4f31c, type: 3}
       propertyPath: m_Name
       value: "\u5C0F\u5C41\u5B69"
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8ed86b8ef3190a9429964c02eaa4f31c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 8ed86b8ef3190a9429964c02eaa4f31c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: 8ed86b8ef3190a9429964c02eaa4f31c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -529,6 +565,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1284488708 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400166, guid: 8ed86b8ef3190a9429964c02eaa4f31c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1284488704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1284488709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284488705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2c112fee4999048916adaa0f2e3f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  atk: 100
+  aud: {fileID: 1284488707}
+  SoundAtk: {fileID: 8300000, guid: e5596bb1fd662e5418d0d33c355a4478, type: 3}
+  zombie: {fileID: 90077760}
+  traPlayer: {fileID: 1284488708}
 --- !u!1 &1598917165
 GameObject:
   m_ObjectHideFlags: 0
