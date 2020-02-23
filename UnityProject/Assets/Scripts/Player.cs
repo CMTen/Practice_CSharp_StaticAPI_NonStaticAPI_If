@@ -20,6 +20,23 @@ public class Player : MonoBehaviour
     public Zombie zombie;
     [Header("")]
     public Transform traPlayer;
+    [Header("傷害延遲")]
+    public float Delay;
+
+    private Animator ani;
+
+    private IEnumerator hurtDelay()
+    {
+        yield return new WaitForSeconds(Delay);
+
+        zombie.aud.PlayOneShot(SoundAtk);
+        getHurt = UnityEngine.Random.Range(20f, 30f);
+        print("<color=blue>" + "玩家受到傷害: " + getHurt + "</color>");
+        hp -= getHurt;
+        print("<color=blue>" + "玩家剩下血量: " + hp + "</color>");
+
+        if (hp <= 0) Dead();
+    }
 
     public void Attack()
     {
@@ -28,6 +45,7 @@ public class Player : MonoBehaviour
             print("玩家行動不能，遊戲結束");
             return;
         }
+        ani.SetTrigger("玩家攻擊");
         zombie.Hurt();
     }
 
@@ -42,12 +60,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        getHurt = UnityEngine.Random.Range(20f, 30f);
-        print("<color=blue>" + "玩家受到傷害: " + getHurt + "</color>");
-        hp -= getHurt;
-        print("<color=blue>" + "玩家剩下血量: " + hp + "</color>");
-
-        if (hp <= 0) Dead();
+        StartCoroutine(hurtDelay());
     }
 
     /// <summary>
@@ -55,14 +68,19 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Dead()
     {
-        print("<color=aqua>玩家死了！玩家死了！別再打了！</color>");
+        print("<color=aqua>已消滅人類！</color>");
         traPlayer.eulerAngles = new Vector3(-90, 0, 0);
-        traPlayer.position = new Vector3(0, 0.2f, 0.15f);
+        traPlayer.position = new Vector3(0, 0.2f, 0.9f);
+    }
+
+    private void Start()
+    {
+        ani = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && zombie.hp > 0)
         {
             Attack();
         }
